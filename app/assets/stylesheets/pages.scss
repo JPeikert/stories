@@ -1,3 +1,106 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, p {
+  font-weight: 100;
+}
+
+.btn {
+  margin-top: 20px;
+  border-radius: 0;
+  padding: 10px 30px;
+}
+
+.nav-icon {
+  width: 24px;
+  height: auto;
+  display: inline-block;
+  margin: 30px;
+  cursor: pointer;
+  vertical-align: top;
+}
+
+a, a:link, a:visited, a:hover {
+  text-decoration: none;
+  color: #FFF;
+}
+
+nav {
+  float: left;
+  background-color: #444;
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  display: none;
+  z-index: 1;
+
+  ul {
+    list-style: none;
+    display: inline-block;
+  }
+
+  li {
+    margin: 10px;
+  }
+
+}
+
+.container {
+  text-align: center;
+}
+
+main {
+  min-height: 700px;
+  background: image-url("bg-home.jpg") no-repeat center center;
+  background-size: cover;
+  color: #FFF;
+
+  .container {
+    display: inline-block;
+  }
+
+  .content {
+    margin-top: 150px;
+
+    h1 {
+      font-size: 50px;
+    }
+  }
+ }
+
+.supporting, .discover {
+  min-height: 300px;
+
+  h2 {
+    margin-top: 100px;
+    font-size: 45px;
+    font-weight: 300;
+  }
+
+  p {
+    font-size: 22px;
+    margin-top: 20px;
+  }
+}
+
+.secondary {
+  min-height: 500px;
+  background: image-url("bg-home2.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+footer {
+  min-height: 80px;
+  background-color: #F9F9F9;
+
+  p {
+    margin-top: 30px;
+  }
+}

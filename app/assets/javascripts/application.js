@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  $('.nav-icon').click(function(){
+    $('#my_nav').toggle("slide", {direction: "left"}, "slow");
+  });
+});
