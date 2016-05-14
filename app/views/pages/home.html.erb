@@ -1,13 +1,9 @@
-<%= render "nav" %>
-
 <main>
   <%= image_tag "nav/menu-white.svg", class: "nav-icon" %>
   <div class="container">
     <div class="content col-md-6 col-md-offset-6">
       <h1>Create and share Stories</h1>
-      <div class="btn btn-primary">
-        <a href="#">Learn more</a>
-      </div>
+      <%= link_to "Learn more", about_path, class: "btn btn-primary" %>
     </div>
   </div>
 </main>
@@ -27,16 +23,6 @@
 <div class="discover">
   <div class="container">
     <h2>Discover Stories</h2>
-    <div class="btn btn-primary">
-      <a href="#">Learn more</a>
-    </div>
+    <%= link_to "Learn more", about_path, class: "btn btn-primary" %>
   </div>
 </div>
-
-<footer>
-  <div class="container">
-    <div class="pull-right">
-      <p>&copy; Wolfgang</p>
-    </div>
-  </div>
-</footer>
