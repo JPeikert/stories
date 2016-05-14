@@ -57,7 +57,6 @@ nav {
 }
 
 
-
 main {
   min-height: 700px;
   background: image-url("bg-home.jpg") no-repeat center center;
@@ -76,6 +75,11 @@ main {
 
 main.about {
   background: image-url("bg-about.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+main.signup, main.thanks {
+  background: image-url("bg-signup.jpg") no-repeat center center;
   background-size: cover;
 }
 

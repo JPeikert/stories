@@ -16,7 +16,7 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('.nav-icon').click(function(){
+  $('.nav-icon').click(function() {
     $('#my_nav').toggle("slide", {direction: "left"}, "slow");
   });
 });
