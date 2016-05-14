@@ -18,6 +18,18 @@
           <% end %>
         </div>
       </div>
+      <div class="row">
+        <% if @signup.errors.any? %>
+          <div id="error_explanation">
+            <ul>
+              <% @signup.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </main>
+

@@ -10,7 +10,7 @@ class SignupsController < ApplicationController
     if @signup.save
       redirect_to thanks_path
     else
-      render "new"
+      render new_signup_path
     end
   end
 
