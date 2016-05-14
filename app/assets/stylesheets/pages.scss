@@ -12,7 +12,7 @@ h1, h2, p {
   font-weight: 100;
 }
 
-.container, .container-fluid {
+.container {
   text-align: center;
 }
 
@@ -22,13 +22,20 @@ h1, h2, p {
   padding: 10px 30px;
 }
 
-.nav-icon {
+.icon {
   width: 24px;
   height: auto;
-  display: inline-block;
-  margin: 30px;
   cursor: pointer;
-  vertical-align: top;
+  position: absolute;
+  top: 30px;
+}
+
+.nav {
+  left: 30px;
+}
+
+.close-icon {
+  right: 30px;
 }
 
 a, a:link, a:visited, a:hover {
@@ -37,8 +44,7 @@ a, a:link, a:visited, a:hover {
 }
 
 nav {
-  float: left;
-  background-color: #444;
+  background-color: #111;
   width: 200px;
   height: 100%;
   position: fixed;
@@ -47,15 +53,17 @@ nav {
 
   ul {
     list-style: none;
-    display: inline-block;
   }
 
-  li {
-    margin: 10px;
+  a {
+    padding: 30px 40px;/*30px 0 60px 30px;*/
+    font-size: 18px;
+    font-weight: 100;
+    width: 100%;
+    display: block;
   }
 
 }
-
 
 main {
   min-height: 700px;
@@ -64,7 +72,7 @@ main {
   color: #FFF;
 
   .content {
-    margin-top: 60px;
+    margin-top: 150px;
 
     h1 {
       font-size: 50px;

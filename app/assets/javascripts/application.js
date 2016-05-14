@@ -14,9 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery-ui
 
 $(document).ready(function() {
-  $('.nav-icon').click(function() {
-    $('#my_nav').toggle("slide", {direction: "left"}, "slow");
+  $('.icon').click(function() {
+    $('#my_nav').toggle("slide", {direction: "left"}, 250);
   });
 });
