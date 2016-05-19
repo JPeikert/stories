@@ -1,3 +1,5 @@
 <div class="thumbnail">
-  <%= link_to image_tag(photo.img), user_photo_path(user_id: photo.user_id, id: photo.id) %>
+  <div class="photo">
+    <%= link_to image_tag(photo.img), user_photo_path(user_id: photo.user_id, id: photo.id) %>
+  </div>
 </div>

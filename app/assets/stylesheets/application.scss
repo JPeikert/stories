@@ -89,6 +89,11 @@ img {
   box-shadow: 5px 5px 10px #888888;
 }
 
+.photo {
+  height: 250px;
+  overflow: hidden;
+}
+
 a, a:link, a:visited, a:hover {
   text-decoration: none;
   color: #FFF;
@@ -195,7 +200,7 @@ footer {
   }
 }
 
-.profile-photos, .users, .photo {
+.profile-photos, .users, .show-photo {
   margin: 80px 0;
 }
 
