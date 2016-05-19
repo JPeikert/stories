@@ -8,7 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= image_tag "nav/menu-white.svg", class: "nav icon" %>
+<%= image_tag "nav/acc-white.png", class: "profile" %>
 <%= render "pages/nav" %>
+<%= render "pages/profilenav" %>
+
 
 <%= yield %>
 

@@ -1,0 +1,14 @@
+<nav id="profile_nav">
+  <% if current_user %>
+  <ul>
+    <li><p class="nav_el name"><%= current_user.first_name %></p></li>
+    <li><%= link_to "Profile", user_path(id: session[:user_id]), class: "nav_el" %></li>
+    <li><%= link_to "Log out", logout_path, method: "delete", class: "nav_el" %></li>
+  </ul>
+  <% else %>
+  <ul>
+    <li><%= link_to "Log in", login_path, class: "nav_el" %></li>
+    <li><%= link_to "Sign up", signup_path, class: "nav_el" %></li>
+  </ul>
+  <% end %>
+</nav>
