@@ -14,7 +14,9 @@
  *= require_self
  */
 $primary-color: #F9F9F9;
-$secondary-color: #E9E9E9;
+$secondary-color: #C4C4C4;
+$btn-color: #999999;
+$btn-hover-color: #888888;
 
 * {
   padding: 0px;
@@ -37,7 +39,6 @@ h1, h2, h3, p {
 }
 
 
-
 header {
   background-color: $secondary-color;
   min-height: 100px;
@@ -56,6 +57,17 @@ img {
   margin-top: 20px;
   border-radius: 0;
   padding: 10px 30px;
+}
+
+.btn, .btn:focus {
+  color: #FFFFFF;
+  background-color: $btn-color;
+  border: $btn-color;
+}
+
+.btn:hover {
+  color: #FFFFFF;
+  background-color: $btn-hover-color;
 }
 
 .icon {
@@ -97,6 +109,10 @@ img {
 a, a:link, a:visited, a:hover {
   text-decoration: none;
   color: #FFF;
+}
+
+.classic, .classic:link, .classic:visited, .classic:hover{
+  color: #000000;
 }
 
 nav {
@@ -177,6 +193,10 @@ main.signup, main.thanks, main.login, main.edit, main.new-photo {
   }
 }
 
+.profile-data h2, .profile-data p, .profile-photos, .photo-details h1, .photo-details h3, .users-header .users {
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+
 .supporting-about {
   min-height: 400px;
   background-color: $primary-color;
@@ -198,6 +218,10 @@ footer {
   p {
     margin-top: 30px;
   }
+}
+
+.description {
+  margin: 50px;
 }
 
 .profile-photos, .users, .show-photo {
@@ -235,10 +259,43 @@ footer {
   padding: 8px 25px;
 }
 
+.btn-delete {
+  @extend .btn-submit;
+  background-color: $secondary-color;
+  font-size: 14px;
+  padding: 6px 15px;
+  margin-left: 20px;
+  float: right;
+}
+
 #error_explanation{
   margin-top: 40px;
 
   ul {
     list-style: none;
   }
+}
+
+.comments {
+  text-align: left;
+  h2 {
+    margin-bottom: 50px;
+  }
+  p {
+    margin: 15px 0;
+    font-weight: 300;
+  }
+}
+
+.comment-form {
+  @extend .form;
+  margin-top: 20px;
+
+  input, textarea {
+    border: 1px solid $secondary-color;
+  }
+}
+
+.comment-section {
+  margin-bottom: 80px;
 }

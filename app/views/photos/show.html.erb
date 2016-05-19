@@ -1,26 +1,40 @@
 <header class="photo-details">
   <div class="container">
-    <h1>"<%= @photo.title %>"</h1>
-    <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+    <div class="col-md-4 col-md-offset-4">
+      <h1>"<%= @photo.title %>"</h1>
+      <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+    </div>
+    <div class="col-md-4 pull-right">
+      <% if @user.id == session[:user_id] %>
+        <%= link_to "Edit details", edit_user_photo_path(id: @photo.id), class: "btn" %>
+        <%= link_to "Delete photo", user_photo_path(@user.id, @photo), method: :delete, data: {confirm: "Are you sure?"}, class: "btn" %>
+      <% end %>
+      <%= link_to "Back", user_path(@user), class: "btn" %>
+    </div>
   </div>
 </header>
 
 <main class="show-photo">
   <div class="container">
     <%= image_tag(@photo.img) %>
-    <p><%= @photo.description %></p>
-    <% if @user.id == session[:user_id] %>
-      <%= link_to "Edit details", edit_user_photo_path(id: @photo.id), class: "btn btn-primary" %>
-      <%= link_to "Delete photo", user_photo_path(@user.id, @photo), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
-    <% end %>
-    <%= link_to "Back", user_path(@user), class: "btn btn-primary" %>
-
-    <div class="comments">
-      <h2>Comments:</h2>
-      <%= render @photo.comments %>
-
-      <h2>Add a comment:</h2>
-      <%= render 'comments/form' %>
+    <div class="description">
+      <h3><%= @photo.description %></h3>
+    </div>
+    
+    <div class="comment-section">
+      <div class="row">
+        <div class="col-md-7 col-md-offset-1">
+          <div class="comments">
+            <h2>Comments:</h2>
+            <%= render @photo.comments %>
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <h2>Add a comment:</h2>
+          <%= render 'comments/form' %>
+        </div>
+      </div>
     </div>
 
   </div>

@@ -1,4 +1,6 @@
-<%= form_for ([@user, @photo, @photo.comments.build]) do |f| %>
-  <%= f.text_field :content, placeholder: "Comment" %>
-  <%= f.submit "Add comment", class: "btn-submit"%>
-<% end %>
+<div class="comment-form">
+  <%= form_for ([@user, @photo, @photo.comments.build]) do |f| %>
+    <%= f.text_area :content, placeholder: "Comment" %>
+    <%= f.submit "Add", class: "btn-submit"%>
+  <% end %>
+</div>
