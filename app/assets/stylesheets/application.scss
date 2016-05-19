@@ -22,16 +22,30 @@ $secondary-color: #E9E9E9;
   font-family: 'Roboto', sans-serif;
 }
 
-body {
-  background-color: $primary-color;
+html {
+  position: relative;
+  min-height: 100%;
 }
 
-h1, h2, p {
+body {
+  background-color: $primary-color;
+  margin-bottom: 80px;
+}
+
+h1, h2, h3, p {
   font-weight: 100;
 }
 
+
+
 header {
   background-color: $secondary-color;
+  min-height: 100px;
+}
+
+img {
+  margin: 0;
+  width: 100%;
 }
 
 .container {
@@ -68,8 +82,11 @@ header {
 .thumbnail {
   color: #000;
   border: 0;
-  margin: 0;
+  margin: 50px;
   padding: 0;
+  width: 400px;
+  display: inline-block;
+  box-shadow: 5px 5px 10px #888888;
 }
 
 a, a:link, a:visited, a:hover {
@@ -110,7 +127,6 @@ nav {
 
 main {
   min-height: 700px;
-  color: #FFF;
 
   .content {
     margin-top: 150px;
@@ -125,16 +141,19 @@ main {
 main.home {
   background: image-url("bg-home.jpg") no-repeat center center;
   background-size: cover;
+  color: #FFF;
 }
 
 main.about {
   background: image-url("bg-about.jpg") no-repeat center center;
   background-size: cover;
+  color: #FFF;
 }
 
 main.signup, main.thanks, main.login, main.edit, main.new-photo {
   background: image-url("bg-signup.jpg") no-repeat center center;
   background-size: cover;
+  color: #FFF;
 }
 
 .supporting, .discover {
@@ -164,11 +183,57 @@ main.signup, main.thanks, main.login, main.edit, main.new-photo {
   background-size: cover;
 }
 
-footer, footer * {
-  min-height: 80px;
+footer {
+  height: 80px;
+  width: 100%;
   background-color: $secondary-color;
+  position: absolute;
+  bottom: 0;
 
   p {
     margin-top: 30px;
+  }
+}
+
+.profile-photos, .users, .photo {
+  margin: 80px 0;
+}
+
+.form {
+  margin-top: 150px;
+  color: #000;
+  text-align: left;
+}
+
+
+.form label {
+  font-size: 16px;
+}
+
+.form input, .form textarea {
+  color: #444;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  margin-top: 20px;
+}
+
+.form input:focus, .form textarea:focus {
+  box-shadow: 0 0 4px rgba(0, 153, 255, 1);
+}
+
+.btn-submit {
+  color: #000;
+  font-size: 16px;
+  padding: 8px 25px;
+}
+
+#error_explanation{
+  margin-top: 40px;
+
+  ul {
+    list-style: none;
   }
 }

@@ -3,10 +3,9 @@
     <div class="form">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <%= form_for @user do |f| %>
-            <%= f.text_field :first_name, placeholder: "First name" %><br>
-            <%= f.text_field :last_name, placeholder: "Last name" %><br>
-            <%= f.email_field :email, placeholder: "Email" %><br>
+          <%= form_for [@user, @photo] do |f| %>
+            <%= f.text_field :title, placeholder: "Title" %><br>
+            <%= f.text_area :description, placeholder: "Description" %><br>
             <%= f.submit "Change", class: "btn-submit"%>
           <% end %>
         </div>

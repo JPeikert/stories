@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   get 'thanks' => 'pages#thanks'
   resources :signups, only: [:new, :create]
 
-  resources  :users do
-    resources :photos do
-      resources :comments
+  resources  :users, only: [:index, :new, :create, :show, :edit, :update] do
+    resources :photos, only: [:show, :new, :create, :edit, :update, :destroy] do
+      resources :comments, only: [:create, :destroy]
     end
   end
   get 'signup' => 'users#new'
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+  get '*path' => redirect('/')
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

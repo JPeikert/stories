@@ -1,9 +1,18 @@
-<div class="photo">
+<header class="photo-details">
+  <div class="container">
+    <h1>"<%= @photo.title %>"</h1>
+    <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+  </div>
+</header>
+
+<main class="photo">
   <div class="container">
     <%= image_tag(@photo.img) %>
-    <h1><%= @photo.title %></h1>
-    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
     <p><%= @photo.description %></p>
+    <% if @user.id == session[:user_id] %>
+      <%= link_to "Edit details", edit_user_photo_path(id: @photo.id), class: "btn btn-primary" %>
+      <%= link_to "Delete photo", user_photo_path(@user.id, @photo), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
+    <% end %>
     <%= link_to "Back", user_path(@user), class: "btn btn-primary" %>
 
     <div class="comments">
@@ -15,4 +24,4 @@
     </div>
 
   </div>
-</div>
+</main>

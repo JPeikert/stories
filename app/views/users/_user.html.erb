@@ -1,6 +1,6 @@
 <% if user.photos.length > 0 %>
-  <div class="photo thumbnail">
-    <h2><%= user.first_name %> <%= user.last_name %></h2>
+  <div class="thumbnail">
     <%= link_to image_tag(user.photos.first.img), user_path(user) %>
+    <h2><%= user.first_name %> <%= user.last_name %></h2>
   </div>
 <% end %>
