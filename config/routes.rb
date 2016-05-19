@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   get 'thanks' => 'pages#thanks'
   resources :signups, only: [:new, :create]
 
-  resources  :users
+  resources  :users do
+    resources :photos do
+      resources :comments
+    end
+  end
   get 'signup' => 'users#new'
   #get 'profile' => 'users#profile'
 
@@ -17,6 +21,7 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

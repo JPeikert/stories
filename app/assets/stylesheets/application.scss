@@ -13,14 +13,25 @@
  *= require_tree .
  *= require_self
  */
+$primary-color: #F9F9F9;
+$secondary-color: #E9E9E9;
+
 * {
   padding: 0px;
   margin: 0px;
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  background-color: $primary-color;
+}
+
 h1, h2, p {
   font-weight: 100;
+}
+
+header {
+  background-color: $secondary-color;
 }
 
 .container {
@@ -52,6 +63,13 @@ h1, h2, p {
 .profile {
   @extend .icon;
   right: 30px;
+}
+
+.thumbnail {
+  color: #000;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 a, a:link, a:visited, a:hover {
@@ -92,8 +110,6 @@ nav {
 
 main {
   min-height: 700px;
-  background: image-url("bg-home.jpg") no-repeat center center;
-  background-size: cover;
   color: #FFF;
 
   .content {
@@ -106,18 +122,24 @@ main {
   }
  }
 
+main.home {
+  background: image-url("bg-home.jpg") no-repeat center center;
+  background-size: cover;
+}
+
 main.about {
   background: image-url("bg-about.jpg") no-repeat center center;
   background-size: cover;
 }
 
-main.signup, main.thanks {
+main.signup, main.thanks, main.login, main.edit, main.new-photo {
   background: image-url("bg-signup.jpg") no-repeat center center;
   background-size: cover;
 }
 
 .supporting, .discover {
   min-height: 300px;
+  background-color: $primary-color;
 
   h2 {
     font-size: 45px;
@@ -133,6 +155,7 @@ main.signup, main.thanks {
 
 .supporting-about {
   min-height: 400px;
+  background-color: $primary-color;
 }
 
 .secondary {
@@ -141,9 +164,9 @@ main.signup, main.thanks {
   background-size: cover;
 }
 
-footer {
+footer, footer * {
   min-height: 80px;
-  background-color: #F9F9F9;
+  background-color: $secondary-color;
 
   p {
     margin-top: 30px;

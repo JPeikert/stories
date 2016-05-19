@@ -1,0 +1,12 @@
+<main class="new-photo">
+  <div class="container">
+    <div class="form-photo">
+      <%= form_for ([@user, @photo]) do |f| %>
+        <%= f.text_field :title, placeholder: "Title" %>
+        <%= f.text_area :description, placeholder: "Description" %>
+        <%= f.text_field :img, placeholder: "Url" %>
+        <%= f.submit "Add photo", class: "btn-submit" %>
+      <% end %>
+    </div>
+  </div>
+</main>

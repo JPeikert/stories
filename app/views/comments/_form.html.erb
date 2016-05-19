@@ -1,0 +1,4 @@
+<%= form_for ([@user, @photo, @photo.comments.build]) do |f| %>
+  <%= f.text_field :content, placeholder: "Comment" %>
+  <%= f.submit "Add comment", class: "btn-submit"%>
+<% end %>

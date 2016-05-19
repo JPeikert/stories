@@ -1,11 +1,22 @@
-<div class="container">
+<header class="profile_data">
+  <div class="container">
+    <p>First name: <%= @user.first_name %></p>
+    <p>Last name: <%= @user.last_name %></p>
+    <p>Email: <%= @user.email %></p>
 
-  <p>First name: <%= @user.first_name %></p>
-  <p>Last name: <%= @user.last_name %></p>
-  <p>Email: <%= @user.email %></p>
+    <% if @user.id == session[:user_id] %>
+      <%= link_to "Edit profile", edit_user_path(id: session[:user_id]), class: "btn btn-primary" %>
+      <%= link_to "Add photo", new_user_photo_path(user_id: session[:user_id]), class: "btn btn-primary" %>
+    <% end %>
+    <%= link_to "Back", users_path, class: "btn btn-primary" %>
+  </div>
+</header>
 
-  <% if @user.id == session[:user_id] %>
-    <%= link_to "Edit profile", edit_user_path(id: session[:user_id]) %>
-  <% end %>
-
-</div>
+<main class="profile_photos">
+  <div class="container">
+  <h1>Photos:</h1>
+    <div class="photos">
+      <%= render @user.photos %>
+    </div>
+  </div>
+</main>

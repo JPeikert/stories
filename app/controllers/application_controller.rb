@@ -12,4 +12,9 @@ class ApplicationController < ActionController::Base
   def require_user
     redirect_to root_path unless current_user
   end
+
+  def require_logout
+    redirect_to users_path if current_user
+  end
+
 end

@@ -1,0 +1,13 @@
+<p>
+  <strong>Commenter:</strong>
+  <%= comment.author %>
+</p>
+
+<p>
+  <strong>Comment</strong>
+  <%= comment.content %>
+  <% if comment.author_id == current_user.id %>
+    <%= link_to "Delete Comment", user_photo_comment_path(@user, @photo, comment), method: :delete, data: {confirm: "Are you sure?"} %>
+  <% end %>
+</p>
+
