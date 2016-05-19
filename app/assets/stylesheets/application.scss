@@ -45,7 +45,7 @@ header {
 
 img {
   margin: 0;
-  width: 100%;
+  width: auto;
 }
 
 .container {
@@ -90,7 +90,7 @@ img {
 }
 
 .photo {
-  height: 250px;
+  max-height: 250px;
   overflow: hidden;
 }
 
