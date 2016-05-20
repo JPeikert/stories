@@ -1,5 +1,5 @@
 <p>
-  <strong><%= link_to comment.author, user_path(@user), class: "classic" %>: </strong>
+  <strong><%= link_to comment.author, user_path(id: comment.author_id), class: "classic" %>: </strong>
   <%= comment.content %>
   <% if comment.author_id == current_user.id %>
     <%= link_to "Delete", user_photo_comment_path(@user, @photo, comment), method: :delete, data: {confirm: "Are you sure?"}, class: "btn-delete" %>

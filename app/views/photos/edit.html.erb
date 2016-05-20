@@ -11,5 +11,16 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <% if @photo.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+            <% @photo.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
   </div>
 </main>

@@ -19,11 +19,9 @@
 $(document).ready(function() {
   $(document).on("click", function(e) {
     if(!$(e.target).hasClass('icon') && !$(e.target).hasClass('profile')) {
-      console.log("found me!");
       $('#my_nav').hide("slide", {direction: "left"}, 250);
       $('#profile_nav').hide("slide", {direction: "right"}, 250);
     }
-    console.log("CLICK!");
   });
 
   $('.icon').click(function() {

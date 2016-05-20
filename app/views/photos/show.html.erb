@@ -17,10 +17,23 @@
 <main class="show-photo">
   <div class="container">
     <%= image_tag(@photo.img) %>
-    <div class="description">
-      <h3><%= @photo.description %></h3>
+    <div class="row">
+      <div class="col-md-9">
+        <h3><%= @photo.description %></h3>
+      </div>
+      <div class="col-md-2">
+        <div class="pull-right">
+          <div class="likes">
+            <%= link_to "<div class='counter'>#{@photo.likes.count}</div>".html_safe, like_path(id: @photo.id), method: :post %>
+            <p>likes</p>
+          </div>
+          <div class="dislikes">
+            <%= link_to "<div class='counter'>#{-@photo.dislikes.count}</div>".html_safe, dislike_path(id: @photo.id), method: :post %>
+            <p>dislikes</p>
+          </div>
+        </div>
+      </div>
     </div>
-    
     <div class="comment-section">
       <div class="row">
         <div class="col-md-7 col-md-offset-1">

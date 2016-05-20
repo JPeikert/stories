@@ -7,8 +7,8 @@
       </div>
       <div class="col-md-4 pull-right">
         <% if @user.id == session[:user_id] %>
-          <%= link_to "Edit profile", edit_user_path(id: session[:user_id]), class: "btn" %>
           <%= link_to "Add photo", new_user_photo_path(user_id: session[:user_id]), class: "btn" %>
+          <%= link_to "Edit profile", edit_user_path(id: session[:user_id]), class: "btn" %>
         <% end %>
         <%= link_to "Back", users_path, class: "btn" %>
       </div>

@@ -11,13 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519112729) do
+ActiveRecord::Schema.define(version: 20160520131229) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "author"
     t.text     "content"
-    t.integer  "likes"
-    t.integer  "dislikes"
     t.integer  "photo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,25 +24,34 @@ ActiveRecord::Schema.define(version: 20160519112729) do
 
   add_index "comments", ["photo_id"], name: "index_comments_on_photo_id"
 
+  create_table "dislikes", force: :cascade do |t|
+    t.integer  "user"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "photo_id"
+  end
+
+  add_index "dislikes", ["photo_id"], name: "index_dislikes_on_photo_id"
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "photo_id"
+  end
+
+  add_index "likes", ["photo_id"], name: "index_likes_on_photo_id"
+
   create_table "photos", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.text     "img"
-    t.integer  "likes"
-    t.integer  "dislikes"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   add_index "photos", ["user_id"], name: "index_photos_on_user_id"
-
-  create_table "signups", force: :cascade do |t|
-    t.string   "firstname"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

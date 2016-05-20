@@ -20,9 +20,12 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+    
+  post 'like' => 'photos#like'
+  post 'dislike' => 'photos#dislike'
 
   get '*path' => redirect('/')
-  
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

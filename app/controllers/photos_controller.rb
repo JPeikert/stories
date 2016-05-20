@@ -23,11 +23,11 @@ class PhotosController < ApplicationController
 
   def create
     @user = User.find(session[:user_id])
-
-    if @user.photos.create(photo_params)
+    @photo = @user.photos.new(photo_params)
+    if @photo.save
       redirect_to user_path(id: session[:user_id])
     else
-      render new_user_photo_path(user_id: session[:user_id])
+      render 'photos/new'
     end
   end
 
@@ -47,7 +47,7 @@ class PhotosController < ApplicationController
       if @photo.update_attributes(photo_params)
         redirect_to user_photo_path(user_id: session[:user_id], id: @photo.id)
       else
-        render edit_user_photo_path(user_id: session[:user_id], id: @photo.id)
+        render 'photos/edit'
       end
     else
       redirect_to users_path
@@ -62,6 +62,30 @@ class PhotosController < ApplicationController
       redirect_to user_path(@user)
     else
       redirect_to users_path
+    end
+  end
+
+  def like
+    @photo = Photo.find(params[:id])
+    unless @photo.likes.exists?(user: session[:user_id])
+      @photo.likes.new(user: session[:user_id])
+      if @photo.save
+        redirect_to user_photo_path(user_id: @photo.user_id, id: @photo.id)
+      end
+    else
+      redirect_to user_photo_path(user_id: @photo.user_id, id: @photo.id)
+    end
+  end
+
+  def dislike
+    @photo = Photo.find(params[:id])
+    unless @photo.dislikes.exists?(user: session[:user_id])
+      @photo.dislikes.new(user: session[:user_id])
+      if @photo.save
+        redirect_to user_photo_path(user_id: @photo.user_id, id: @photo.id)
+      end
+    else
+      redirect_to user_photo_path(user_id: @photo.user_id, id: @photo.id)
     end
   end
 
