@@ -13,10 +13,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    if current_user.id == params[:user_id]
-      @user = User.find(params[:user_id])
-      @photo = @user.photos.find(params[:photo_id])
-      @comment = @photo.comments.find(params[:id])
+    @user = User.find(params[:user_id])
+    @photo = @user.photos.find(params[:photo_id])
+    @comment = @photo.comments.find(params[:id])
+    if current_user.id == @comment.author_id
       @comment.destroy
       redirect_to user_photo_path(user_id: @user.id, id: @photo.id)
     else
