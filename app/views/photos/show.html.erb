@@ -16,7 +16,7 @@
 
 <main class="show-photo">
   <div class="container">
-    <%= image_tag(@photo.img) %>
+    <%= image_tag(@photo.img, class: "full-photo") %>
     <div class="row">
       <div class="col-md-9">
         <h3><%= @photo.description %></h3>
