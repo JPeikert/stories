@@ -1,6 +1,6 @@
 # Stories
 
-Stories is a platform, written in Ruby, on which you can share your photos and comment other people's photos, as well as like and dislike them.
+Stories is a platform on which you can share your photos and comment other people's photos, as well as like and dislike them.
 
 ### Compatibility
 Stories is created and tested on: 
