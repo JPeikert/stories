@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery-ui
+//= require bootstrap.min
 
 $(document).ready(function() {
   $(document).on("click", function(e) {
